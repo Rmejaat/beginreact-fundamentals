@@ -18,7 +18,31 @@
     div.appendChild(button);
     button.addEventListener('click', () => {
       alert('Tu as cliqué sur Hello !');
-      console.log('test');
+    });
+
+    const Counter = (initialValue = 0) => {
+      const button = document.createElement('button'); // 🦁 remplace "" par la création d'un bouton
+      // 🦁 Ajout du texte
+      // 🦁 Ajout de l'event
+      button.innerText = initialValue;
+      button.setAttribute('class', 'btn', 'btn-primary');
+      button.addEventListener('click', () => {
+        initialValue++;
+      });
+      return button;
+    };
+
+    div.appendChild(Counter(10));
+    div.appendChild(Counter(100));
+
+    const fruits = ['banana', 'apple', 'strawberry'];
+    const newUl = document.createElement('ul');
+    div.appendChild(newUl);
+
+    fruits.map((e) => {
+      const li = document.createElement('li');
+      li.innerText = e;
+      newUl.appendChild(li);
     });
 
     // 🦁 crée un button
