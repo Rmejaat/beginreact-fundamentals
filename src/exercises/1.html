@@ -16,6 +16,10 @@
     button.setAttribute('class', 'btn', 'btn-primary');
     button.innerText = 'Hello 👋';
     div.appendChild(button);
+    button.addEventListener('click', () => {
+      alert('Tu as cliqué sur Hello !');
+      console.log('test');
+    });
 
     // 🦁 crée un button
 
