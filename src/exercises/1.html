@@ -7,13 +7,22 @@
 
   <script>
     // 🦁 crée un div avec l'id "root" et la classe "container"
-    
+    const div = document.createElement('div');
+    document.querySelector('body').appendChild(div);
+    div.setAttribute('id', 'root');
+    div.setAttribute('class', 'container');
+
+    const button = document.createElement('button');
+    button.setAttribute('class', 'btn', 'btn-primary');
+    button.innerText = 'Hello 👋';
+    div.appendChild(button);
+
     // 🦁 crée un button
-    
+
     // 🦁 ajoute les classes "btn" et "btn-primary" dedans
-    
+
     // 🦁 ajoute le text "Hello 👋" dedans
-    
+
     // 🦁 ajoute le button dans l'élément "root"
   </script>
 </html>
