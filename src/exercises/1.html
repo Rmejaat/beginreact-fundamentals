@@ -13,27 +13,33 @@
     div.setAttribute('class', 'container');
 
     const button = document.createElement('button');
-    button.setAttribute('class', 'btn', 'btn-primary');
+    button.classList.add('btn', 'btn-primary');
     button.innerText = 'Hello 👋';
     div.appendChild(button);
     button.addEventListener('click', () => {
       alert('Tu as cliqué sur Hello !');
     });
 
-    const Counter = (initialValue = 0) => {
+    const Counter = (initialValue) => {
+      initialValue = typeof initialValue != 'number' ? 0 : initialValue;
+
       const button = document.createElement('button'); // 🦁 remplace "" par la création d'un bouton
       // 🦁 Ajout du texte
       // 🦁 Ajout de l'event
       button.innerText = initialValue;
-      button.setAttribute('class', 'btn', 'btn-primary');
+      button.classList.add('btn', 'btn-primary');
+
+      let count = 0;
       button.addEventListener('click', () => {
-        initialValue++;
+        count++;
+        button.innerText = count;
       });
       return button;
     };
 
     div.appendChild(Counter(10));
     div.appendChild(Counter(100));
+    div.appendChild(Counter('numver'));
 
     const fruits = ['banana', 'apple', 'strawberry'];
     const newUl = document.createElement('ul');
