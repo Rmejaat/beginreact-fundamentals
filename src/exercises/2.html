@@ -27,12 +27,84 @@
       alert('Tu as cliqué sur Hello !');
     };
 
+    const fruits = ['pomme', 'poire', 'fraise', 'cerise'];
+
+    const li = fruits.map((e) => {
+      const list = React.createElement('li', {}, e);
+    });
+
+    const newUl = React.createElement(
+      'ul',
+      { className: 'list-disc list-inside' },
+      fruits.map((e) => React.createElement('li', { key: e }, e))
+    );
+
+    const button4 = React.createElement(
+      'button',
+      { className: 'btn btn-primary', onClick: handleClick },
+      'Buy Now'
+    );
+
+    const div4 = React.createElement(
+      'div',
+      {
+        className: 'card-actions justify-end',
+      },
+      button4
+    );
+
+    const para = React.createElement(
+      'p',
+      {},
+      'If a dog chews shoes whose shoes does he choose?'
+    );
+
+    const h2 = React.createElement(
+      'h2',
+      {
+        className: 'card-title',
+      },
+      'Shoes !'
+    );
+
+    const div3 = React.createElement(
+      'div',
+      {
+        className: 'card-body',
+      },
+      h2,
+      para,
+      div4
+    );
+
+    const img = React.createElement('img', {
+      src: 'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg',
+      alt: 'Shoes',
+    });
+
+    const figure = React.createElement('figure', {}, img);
+
+    const div2 = React.createElement(
+      'div',
+      {
+        className: 'card bg-base-300 w-96 shadow-xl',
+      },
+      figure,
+      div3
+    );
+
     const button = React.createElement(
       'button',
       { className: 'btn btn-primary', onClick: handleClick },
       'Hello 👋'
     );
-    const div = React.createElement('div', { className: 'container' }, button);
+    const div = React.createElement(
+      'div',
+      { className: 'container' },
+      button,
+      div2,
+      newUl
+    );
     // 🦁 Crée une div : "main" avec à l'intérieur le bouton.
     // 💡 On utilise un div `main` car la méthode `render` accepte qu'un seul élément
     // 💡 On va donc utiliser cette div pour render tous nos éléments
